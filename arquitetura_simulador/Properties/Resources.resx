@@ -121,4 +121,22 @@
   <data name="SetaIco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SetaIco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AboutIco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AboutIco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddIco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddIco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DataIco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DataIco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExitIco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExitIco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoIco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NoIco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OKIco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OKIco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

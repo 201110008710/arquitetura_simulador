@@ -13,7 +13,7 @@ namespace arquitetura_simulador
 
         public ULA()
         {
-            this.flags = new int[3];
+            this.flags = new int[4];
             this.flags[0] = 0;
             this.flags[1] = 0;
             this.flags[2] = 0;

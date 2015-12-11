@@ -89,6 +89,24 @@
   <ItemGroup>
     <None Include="Resources\SetaIco.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutIco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddIco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataIco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExitIco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NoIco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OKIco.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
