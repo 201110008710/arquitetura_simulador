@@ -22,47 +22,47 @@ namespace arquitetura_simulador
 
             switch (inst)
             {
-                case Convert.ToInt64("0000",2): //Soma
+                case 0: //Soma
                     ula.soma(operando1, operando2);
                     break;
-                case 0b0001: //Subtração
+                case 1: //Subtração
                     ula.subtracao(operando1, operando2);
                     break;
-                case 0b0010: //Multiplicacao
+                case 2: //Multiplicacao
                     ula.multiplicacao(operando1, operando2);
                     break;
-                case 0b0100: //Divisao
+                case 3: //Divisao
                     ula.divisao(operando1, operando2);
                     break;
-                case 0b0101: //And
+                case 4: //And
                     ula.and(operando1, operando2);
                     break;
-                case 0b0110: //Not
+                case 5: //Not
                     ula.not(operando1);
                     break;
-                case 0b0111: //Or
+                case 6: //Or
                     ula.or(operando1, operando2);
                     break;
-                case 0b1000: //Xor
+                case 7: //Xor
                     ula.xor(operando1, operando2);
                     break;
-                case 0b1001: //ShiftLeft
+                case 8: //ShiftLeft
                     ula.shiftLeft(operando1, operando2);
                     break;
-                case 0b1010: //ShiftRight
+                case 9: //ShiftRight
                     ula.shiftRight(operando1, operando2);
                     break;
-                case 0b1011: //Incremento
+                case 10: //Incremento
                     ula.incremento(operando1);
                     break;
-                case 0b1100: //Decremento
+                case 11: //Decremento
                     ula.decremento(operando1);
                     break;
-                case 0b1101: //mov memória -> registrador
+                case 12: //mov memória -> registrador
                     break;
-                case 0b1110: //mov registrador -> memória
+                case 13: //mov registrador -> memória
                     break;
-                case 0b1111:
+                case 14:
                     break;
             }
 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace arquitetura_simulador
 {
-    public partial class Form1 : Form
+    public partial class frmSimulador : Form
     {
-        public Form1()
+        public frmSimulador()
         {
             InitializeComponent();
         }
