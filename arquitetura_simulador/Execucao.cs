@@ -47,10 +47,10 @@ namespace arquitetura_simulador
                     ula.xor(operando1, operando2);
                     break;
                 case 8: //ShiftLeft
-                    ula.shiftLeft(operando1, operando2);
+                    ula.shiftLeft(operando1, Convert.ToInt32(operando2));
                     break;
                 case 9: //ShiftRight
-                    ula.shiftRight(operando1, operando2);
+                    ula.shiftRight(operando1, Convert.ToInt32(operando2));
                     break;
                 case 10: //Incremento
                     ula.incremento(operando1);

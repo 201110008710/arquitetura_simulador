@@ -8,6 +8,7 @@ namespace arquitetura_simulador
 {
     class ULA
     {
+        // Flags [0 0 0 0] -> [Z NZ D0 O]
         private int[] flags;
 
         public ULA()
@@ -19,7 +20,7 @@ namespace arquitetura_simulador
             this.flags[3] = 0;
         }
 
-        public long soma(long operando1, long operando2)
+                public long soma(long operando1, long operando2)
         {
             long soma = operando1 + operando2;
             if (soma < -2147483647 || soma > 2147483647)
@@ -88,12 +89,12 @@ namespace arquitetura_simulador
             return (operando1 ^ operando2);
         }
 
-        public long shiftLeft(long operando1, long operando2)
+        public long shiftLeft(long operando1, int operando2)
         {
             return (operando1 << operando2);
         }
 
-        public long shiftRight(long operando1, long operando2)
+        public long shiftRight(long operando1, int operando2)
         {
             return (operando1 >> operando2);
         }

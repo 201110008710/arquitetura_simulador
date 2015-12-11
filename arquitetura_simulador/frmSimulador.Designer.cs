@@ -69,6 +69,25 @@
             this.picExec = new System.Windows.Forms.PictureBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.txtExec = new System.Windows.Forms.TextBox();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.picULAResultado = new System.Windows.Forms.PictureBox();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtULARes = new System.Windows.Forms.TextBox();
+            this.picULAStatus = new System.Windows.Forms.PictureBox();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtULAStatus = new System.Windows.Forms.TextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPC)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -98,6 +117,16 @@
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExec)).BeginInit();
             this.groupBox15.SuspendLayout();
+            this.groupBox16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picULAResultado)).BeginInit();
+            this.groupBox19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.groupBox20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picULAStatus)).BeginInit();
+            this.groupBox17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox18.SuspendLayout();
+            this.groupBox21.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -105,7 +134,7 @@
             this.groupBox1.Controls.Add(this.picPC);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 55);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(160, 256);
             this.groupBox1.TabIndex = 0;
@@ -152,7 +181,7 @@
             this.groupBox3.Controls.Add(this.groupBox6);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(178, 12);
+            this.groupBox3.Location = new System.Drawing.Point(178, 55);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(160, 256);
             this.groupBox3.TabIndex = 3;
@@ -313,7 +342,7 @@
             this.groupBox9.Controls.Add(this.picBusca);
             this.groupBox9.Controls.Add(this.groupBox10);
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox9.Location = new System.Drawing.Point(344, 12);
+            this.groupBox9.Location = new System.Drawing.Point(344, 55);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(160, 256);
             this.groupBox9.TabIndex = 14;
@@ -358,7 +387,7 @@
             this.groupBox7.Controls.Add(this.groupBox11);
             this.groupBox7.Controls.Add(this.groupBox13);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(510, 12);
+            this.groupBox7.Location = new System.Drawing.Point(510, 55);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(160, 256);
             this.groupBox7.TabIndex = 14;
@@ -490,7 +519,7 @@
             this.groupBox12.Controls.Add(this.picExec);
             this.groupBox12.Controls.Add(this.groupBox15);
             this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox12.Location = new System.Drawing.Point(676, 12);
+            this.groupBox12.Location = new System.Drawing.Point(676, 55);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(160, 256);
             this.groupBox12.TabIndex = 15;
@@ -526,11 +555,219 @@
             this.txtExec.Text = "00000000";
             this.txtExec.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.picULAStatus);
+            this.groupBox16.Controls.Add(this.groupBox17);
+            this.groupBox16.Controls.Add(this.picULAResultado);
+            this.groupBox16.Controls.Add(this.groupBox19);
+            this.groupBox16.Controls.Add(this.groupBox21);
+            this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox16.Location = new System.Drawing.Point(842, 55);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(160, 256);
+            this.groupBox16.TabIndex = 15;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "ULA";
+            // 
+            // picULAResultado
+            // 
+            this.picULAResultado.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
+            this.picULAResultado.Location = new System.Drawing.Point(24, 35);
+            this.picULAResultado.Name = "picULAResultado";
+            this.picULAResultado.Size = new System.Drawing.Size(25, 26);
+            this.picULAResultado.TabIndex = 10;
+            this.picULAResultado.TabStop = false;
+            // 
+            // groupBox19
+            // 
+            this.groupBox19.Controls.Add(this.pictureBox5);
+            this.groupBox19.Controls.Add(this.groupBox20);
+            this.groupBox19.Controls.Add(this.txtULARes);
+            this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox19.Location = new System.Drawing.Point(55, 23);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(77, 50);
+            this.groupBox19.TabIndex = 2;
+            this.groupBox19.TabStop = false;
+            this.groupBox19.Text = "Resultado";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox5.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
+            this.pictureBox5.Location = new System.Drawing.Point(-32, -94);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(34, 26);
+            this.pictureBox5.TabIndex = 4;
+            this.pictureBox5.TabStop = false;
+            // 
+            // groupBox20
+            // 
+            this.groupBox20.Controls.Add(this.textBox4);
+            this.groupBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox20.Location = new System.Drawing.Point(-1, -107);
+            this.groupBox20.Name = "groupBox20";
+            this.groupBox20.Size = new System.Drawing.Size(68, 50);
+            this.groupBox20.TabIndex = 5;
+            this.groupBox20.TabStop = false;
+            this.groupBox20.Text = "Endereço";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(6, 19);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(57, 20);
+            this.textBox4.TabIndex = 3;
+            this.textBox4.Text = "00000000";
+            // 
+            // txtULARes
+            // 
+            this.txtULARes.Location = new System.Drawing.Point(8, 19);
+            this.txtULARes.Name = "txtULARes";
+            this.txtULARes.Size = new System.Drawing.Size(62, 20);
+            this.txtULARes.TabIndex = 3;
+            this.txtULARes.Text = "00000000";
+            this.txtULARes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // picULAStatus
+            // 
+            this.picULAStatus.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
+            this.picULAStatus.Location = new System.Drawing.Point(24, 91);
+            this.picULAStatus.Name = "picULAStatus";
+            this.picULAStatus.Size = new System.Drawing.Size(25, 26);
+            this.picULAStatus.TabIndex = 12;
+            this.picULAStatus.TabStop = false;
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.pictureBox2);
+            this.groupBox17.Controls.Add(this.groupBox18);
+            this.groupBox17.Controls.Add(this.txtULAStatus);
+            this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox17.Location = new System.Drawing.Point(55, 79);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(77, 50);
+            this.groupBox17.TabIndex = 11;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Status";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
+            this.pictureBox2.Location = new System.Drawing.Point(-32, -94);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 26);
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.textBox1);
+            this.groupBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox18.Location = new System.Drawing.Point(-1, -107);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(68, 50);
+            this.groupBox18.TabIndex = 5;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "Endereço";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(57, 20);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.Text = "00000000";
+            // 
+            // txtULAStatus
+            // 
+            this.txtULAStatus.Location = new System.Drawing.Point(8, 19);
+            this.txtULAStatus.Name = "txtULAStatus";
+            this.txtULAStatus.Size = new System.Drawing.Size(62, 20);
+            this.txtULAStatus.TabIndex = 3;
+            this.txtULAStatus.Text = "00000000";
+            this.txtULAStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 496);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1015, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 16;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // groupBox21
+            // 
+            this.groupBox21.Controls.Add(this.checkBox4);
+            this.groupBox21.Controls.Add(this.checkBox2);
+            this.groupBox21.Controls.Add(this.checkBox1);
+            this.groupBox21.Controls.Add(this.checkBox3);
+            this.groupBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox21.Location = new System.Drawing.Point(8, 135);
+            this.groupBox21.Name = "groupBox21";
+            this.groupBox21.Size = new System.Drawing.Size(145, 113);
+            this.groupBox21.TabIndex = 17;
+            this.groupBox21.TabStop = false;
+            this.groupBox21.Text = "Status Detalhes:";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoCheck = false;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(16, 19);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(48, 17);
+            this.checkBox1.TabIndex = 21;
+            this.checkBox1.Text = "Zero";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoCheck = false;
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(16, 42);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(68, 17);
+            this.checkBox2.TabIndex = 22;
+            this.checkBox2.Text = "Not Zero";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoCheck = false;
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(16, 65);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(96, 17);
+            this.checkBox3.TabIndex = 23;
+            this.checkBox3.Text = "Divide By Zero";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoCheck = false;
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(16, 88);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(68, 17);
+            this.checkBox4.TabIndex = 24;
+            this.checkBox4.Text = "Overflow";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
             // frmSimulador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 456);
+            this.ClientSize = new System.Drawing.Size(1015, 518);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.groupBox16);
             this.Controls.Add(this.groupBox12);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox9);
@@ -539,7 +776,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmSimulador";
-            this.Text = "Form1";
+            this.Text = "Simulador do Processador";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picPC)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -581,7 +818,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.picExec)).EndInit();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
+            this.groupBox16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picULAResultado)).EndInit();
+            this.groupBox19.ResumeLayout(false);
+            this.groupBox19.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.groupBox20.ResumeLayout(false);
+            this.groupBox20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picULAStatus)).EndInit();
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
+            this.groupBox21.ResumeLayout(false);
+            this.groupBox21.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -628,6 +881,25 @@
         private System.Windows.Forms.PictureBox picExec;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.TextBox txtExec;
+        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.PictureBox picULAStatus;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtULAStatus;
+        private System.Windows.Forms.PictureBox picULAResultado;
+        private System.Windows.Forms.GroupBox groupBox19;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.GroupBox groupBox20;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtULARes;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.GroupBox groupBox21;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox3;
     }
 }
 
