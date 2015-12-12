@@ -40,11 +40,13 @@ namespace arquitetura_simulador
                     while ((line = file.ReadLine()) != null)
                     {
                         linhas.Add(line);
-                        if(line.Length != 32)
+                       // long line2 = Convert.ToInt64(line);
+                       // Console.Out.WriteLine(line2);
+                        if (line.Length != 32)
                         {
                             erro = true;
                         }
-                            
+
                     }
                 }
             }

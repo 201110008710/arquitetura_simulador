@@ -25,5 +25,10 @@ namespace arquitetura_simulador
         {
             dado.Insert(posicao, info);
         }
+
+        public void addDado(long info)
+        {
+            dado.Add(info);
+        }
     }
 }
