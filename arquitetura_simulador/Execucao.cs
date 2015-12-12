@@ -8,52 +8,82 @@ namespace arquitetura_simulador
 {
     static class Execucao
     {
+        private static bool ula = false;
 
-        static public void instrucao(int inst, long operando1, long operando2)
+        static public int getInstrucao()
         {
+            execucao();
+            return Convert.ToInt32(Decodificador.getInstrucao());
+        }
+
+        static public bool foiParaULA()
+        {
+            return ula;
+        }
+
+        static private void execucao()
+        {
+            int inst = Convert.ToInt32(Decodificador.getInstrucao());
+            long operando1 = Decodificador.getOperando1();
+            long operando2 = Decodificador.getOperando2();
             switch (inst)
             {
                 case 0: //Soma
-                    ula.soma(operando1, operando2);
+                    ula = true;
+                    ULA.soma(operando1, operando2);
                     break;
                 case 1: //Subtração
-                    ula.subtracao(operando1, operando2);
+                    ula = true;
+                    ULA.subtracao(operando1, operando2);
                     break;
                 case 2: //Multiplicacao
-                    ula.multiplicacao(operando1, operando2);
+                    ula = true;
+                    ULA.multiplicacao(operando1, operando2);
                     break;
                 case 3: //Divisao
-                    ula.divisao(operando1, operando2);
+                    ula = true;
+                    ULA.divisao(operando1, operando2);
                     break;
                 case 4: //And
-                    ula.and(operando1, operando2);
+                    ula = true;
+                    ULA.and(operando1, operando2);
                     break;
                 case 5: //Not
-                    ula.not(operando1);
+                    ula = true;
+                    ULA.not(operando1);
                     break;
                 case 6: //Or
-                    ula.or(operando1, operando2);
+                    ula = true;
+                    ULA.or(operando1, operando2);
                     break;
                 case 7: //Xor
-                    ula.xor(operando1, operando2);
+                    ula = true;
+                    ULA.xor(operando1, operando2);
                     break;
                 case 8: //ShiftLeft
-                    ula.shiftLeft(operando1, Convert.ToInt32(operando2));
+                    ula = true;
+                    ULA.shiftLeft(operando1, Convert.ToInt32(operando2));
                     break;
                 case 9: //ShiftRight
-                    ula.shiftRight(operando1, Convert.ToInt32(operando2));
+                    ula = true;
+                    ULA.shiftRight(operando1, Convert.ToInt32(operando2));
                     break;
                 case 10: //Incremento
-                    ula.incremento(operando1);
+                    ula = true;
+                    ULA.incremento(operando1);
                     break;
                 case 11: //Decremento
-                    ula.decremento(operando1);
+                    ula = true;
+                    ULA.decremento(operando1);
                     break;
                 case 12: //mov memória -> registrador
+                    ula = false;
                     break;
                 case 13: //mov registrador -> memória
+                    ula = false;
                     break;
                 case 14:
+                    ula = false;
                     break;
             }
 

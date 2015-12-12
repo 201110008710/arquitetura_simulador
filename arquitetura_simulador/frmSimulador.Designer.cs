@@ -70,10 +70,10 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.txtULARes = new System.Windows.Forms.TextBox();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.cbOverflow = new System.Windows.Forms.CheckBox();
+            this.cbNZero = new System.Windows.Forms.CheckBox();
+            this.cbZero = new System.Windows.Forms.CheckBox();
+            this.cbDiv = new System.Windows.Forms.CheckBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusClock = new System.Windows.Forms.ToolStripStatusLabel();
             this.btClock = new System.Windows.Forms.Button();
@@ -572,10 +572,10 @@
             // 
             // groupBox21
             // 
-            this.groupBox21.Controls.Add(this.checkBox4);
-            this.groupBox21.Controls.Add(this.checkBox2);
-            this.groupBox21.Controls.Add(this.checkBox1);
-            this.groupBox21.Controls.Add(this.checkBox3);
+            this.groupBox21.Controls.Add(this.cbOverflow);
+            this.groupBox21.Controls.Add(this.cbNZero);
+            this.groupBox21.Controls.Add(this.cbZero);
+            this.groupBox21.Controls.Add(this.cbDiv);
             this.groupBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox21.Location = new System.Drawing.Point(7, 135);
             this.groupBox21.Name = "groupBox21";
@@ -584,49 +584,49 @@
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "Status Detalhes:";
             // 
-            // checkBox4
+            // cbOverflow
             // 
-            this.checkBox4.AutoCheck = false;
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(16, 88);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(68, 17);
-            this.checkBox4.TabIndex = 24;
-            this.checkBox4.Text = "Overflow";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.cbOverflow.AutoCheck = false;
+            this.cbOverflow.AutoSize = true;
+            this.cbOverflow.Location = new System.Drawing.Point(16, 88);
+            this.cbOverflow.Name = "cbOverflow";
+            this.cbOverflow.Size = new System.Drawing.Size(68, 17);
+            this.cbOverflow.TabIndex = 24;
+            this.cbOverflow.Text = "Overflow";
+            this.cbOverflow.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // cbNZero
             // 
-            this.checkBox2.AutoCheck = false;
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(16, 42);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(68, 17);
-            this.checkBox2.TabIndex = 22;
-            this.checkBox2.Text = "Not Zero";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbNZero.AutoCheck = false;
+            this.cbNZero.AutoSize = true;
+            this.cbNZero.Location = new System.Drawing.Point(16, 42);
+            this.cbNZero.Name = "cbNZero";
+            this.cbNZero.Size = new System.Drawing.Size(68, 17);
+            this.cbNZero.TabIndex = 22;
+            this.cbNZero.Text = "Not Zero";
+            this.cbNZero.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cbZero
             // 
-            this.checkBox1.AutoCheck = false;
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(16, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(48, 17);
-            this.checkBox1.TabIndex = 21;
-            this.checkBox1.Text = "Zero";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbZero.AutoCheck = false;
+            this.cbZero.AutoSize = true;
+            this.cbZero.Location = new System.Drawing.Point(16, 19);
+            this.cbZero.Name = "cbZero";
+            this.cbZero.Size = new System.Drawing.Size(48, 17);
+            this.cbZero.TabIndex = 21;
+            this.cbZero.Text = "Zero";
+            this.cbZero.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // cbDiv
             // 
-            this.checkBox3.AutoCheck = false;
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(16, 65);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(96, 17);
-            this.checkBox3.TabIndex = 23;
-            this.checkBox3.Text = "Divide By Zero";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.cbDiv.AutoCheck = false;
+            this.cbDiv.AutoSize = true;
+            this.cbDiv.Location = new System.Drawing.Point(16, 65);
+            this.cbDiv.Name = "cbDiv";
+            this.cbDiv.Size = new System.Drawing.Size(96, 17);
+            this.cbDiv.TabIndex = 23;
+            this.cbDiv.Text = "Divide By Zero";
+            this.cbDiv.UseVisualStyleBackColor = true;
             // 
             // statusStrip1
             // 
@@ -984,10 +984,10 @@
         private System.Windows.Forms.TextBox txtULARes;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.GroupBox groupBox21;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox cbOverflow;
+        private System.Windows.Forms.CheckBox cbNZero;
+        private System.Windows.Forms.CheckBox cbZero;
+        private System.Windows.Forms.CheckBox cbDiv;
         private System.Windows.Forms.ToolStripStatusLabel StatusClock;
         private System.Windows.Forms.Button btClock;
         private System.Windows.Forms.Panel panel1;

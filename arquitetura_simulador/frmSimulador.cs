@@ -15,7 +15,11 @@ namespace arquitetura_simulador
     public partial class frmSimulador : Form
     {
         String filename = null;
+        ArrayList buffer = new ArrayList();
+        int posicoes = 0;
+        int atualizacao = 0;
         int clock = 0;
+        int clockTotal = 0;
 
 
         public frmSimulador()
@@ -32,6 +36,11 @@ namespace arquitetura_simulador
             switch (i)
             {
                 case 0:
+                    if ()
+                    {
+
+                    }
+                    clearTxtLabels();
                     setarImagensInvisiveis();
                     picPC.Visible = true;
                     txtPC.Text = PC.getEnderecoAndInc().ToString();
@@ -57,12 +66,15 @@ namespace arquitetura_simulador
                 case 4:
                     setarImagensInvisiveis();
                     picExec.Visible = true;
-
-
-                    txtDecodInst.Text = string.Format("0x{0:X}", Decodificador.getInstrucao());
-                    txtOperacao.Text = obterOperacao(Decodificador.getInstrucao());
-                    txtDecodOp1.Text = string.Format("0x{0:X}", Decodificador.getOperando1());
-                    txtDecodOp2.Text = string.Format("0x{0:X}", Decodificador.getOperando2());
+                    txtOperacao.Text = obterOperacao(Execucao.getInstrucao());
+                    if (Execucao.foiParaULA())
+                    {
+                        picULAResultado.Visible = true;
+                        picULAStatus.Visible = true;
+                        txtULARes.Text = ULA.getResultado().ToString();
+                        txtULAStatus.Text = String.Join("", ULA.getFlags().Select(p => p.ToString()).ToArray());
+                        setarStatusULA();
+                    }
                     break;
             }
 
@@ -87,6 +99,42 @@ namespace arquitetura_simulador
                     picMemoria3.Visible = true;
                     break;
             }
+        }
+        #endregion
+
+        #region clearTxtLabels
+        private void clearTxtLabels()
+        {
+            txtPC.Text = "";
+            txtBusca.Text = "";
+            txtDecodInst.Text = "";
+            txtDecodOp1.Text = "";
+            txtDecodOp2.Text = "";
+            txtOperacao.Text = "";
+            txtULARes.Text = "";
+            txtULAStatus.Text = "";
+        }
+        #endregion
+
+        #region setarStatusULA
+        private void setarStatusULA()
+        {
+            if (ULA.getFlags()[0] == 1)
+                cbZero.Checked = true;
+            else
+                cbZero.Checked = false;
+            if (ULA.getFlags()[1] == 1)
+                cbNZero.Checked = true;
+            else
+                cbNZero.Checked = false;
+            if (ULA.getFlags()[2] == 1)
+                cbNZero.Checked = true;
+            else
+                cbDiv.Checked = false;
+            if (ULA.getFlags()[3] == 1)
+                cbOverflow.Checked = true;
+            else
+                cbOverflow.Checked = false;
         }
         #endregion
 
@@ -130,8 +178,37 @@ namespace arquitetura_simulador
         }
         #endregion
 
-        #region preencherMemoria
-        public void preencherMemoria(String filename)
+        #region atualizarMemoria
+        public void atualizarMemoria()
+        {
+            Memoria.clearMemory();
+            int i = 0;
+            for (i = 0; i < buffer.Count; i++)
+                if (i > 3)
+                {
+                    break;
+                }
+                else
+                {
+                    Memoria.insertDado(i, buffer[i + 4 * atualizacao].ToString());
+                }
+            atualizacao++;
+            setarMemoriaTxtLabels();
+        }
+        #endregion
+
+        #region setarMemoriaTxtLabels
+        public void setarMemoriaTxtLabels()
+        {
+            txtMemoria0.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(0), 2));
+            txtMemoria1.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(1), 2));
+            txtMemoria2.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(2), 2));
+            txtMemoria3.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(3), 2));
+        }
+        #endregion
+
+        #region lerArquivo
+        public void lerArquivo(String filename)
         {
 
             String line;
@@ -145,14 +222,14 @@ namespace arquitetura_simulador
                         {
                             if (line.Length == 32)
                             {
-                                Memoria.addDado(line);
+                                buffer.Add(line);
                             }
                             else
                             {
                                 MessageBox.Show("O arquivo deve possuir 32 caracteres por linha!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                Memoria.clearAll();
+                                buffer.Clear();
                             }
-
+                            posicoes++;
                         }
                     }
                 }
@@ -160,12 +237,13 @@ namespace arquitetura_simulador
                 {
                     MessageBox.Show("Não foi possível ler o arquivo!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                if (Memoria.isNull() == false)
+                if (buffer.Count != 0)
                 {
-                    txtMemoria0.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(0), 2));
-                    txtMemoria1.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(1), 2));
-                    txtMemoria2.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(2), 2));
-                    txtMemoria3.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(3), 2));
+                    atualizarMemoria();
+                    //txtMemoria0.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(0), 2));
+                    //txtMemoria1.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(1), 2));
+                    //txtMemoria2.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(2), 2));
+                    //txtMemoria3.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(3), 2));
                 }
             }
             else
@@ -204,14 +282,14 @@ namespace arquitetura_simulador
             {
                 filename = openFileDialog1.FileName;
             }
-            preencherMemoria(filename);
+            lerArquivo(filename);
         }
         #endregion
 
         #region atualizarClockStatus
         private void atualizarClockStatus()
         {
-            StatusClock.Text = "Clock: " + clock;
+            StatusClock.Text = "Clock: " + clockTotal;
         }
         #endregion
 
@@ -234,14 +312,16 @@ namespace arquitetura_simulador
 
         private void btClock_Click(object sender, EventArgs e)
         {
-            if (Memoria.isNull()==false)
+            Console.Out.WriteLine(posicoes);
+            if (Memoria.isNull() == false) 
             {
                 simular(clock);
                 clock++;
-                if (clock == 6)
+                if (clock == 5)
                 {
                     clock = 0;
                 }
+                clockTotal++;
                 atualizarClockStatus();
             }
             else

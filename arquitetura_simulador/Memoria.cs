@@ -26,9 +26,17 @@ namespace arquitetura_simulador
             dado.Add(info);
         }
 
-        public static void clearAll()
+        public static void insertDado(int pos, String info)
         {
-            dado.Clear();
+            dado.Insert(pos, info);
+        }
+
+        public static void clearMemory()
+        {
+            dado.Insert(0, null);
+            dado.Insert(1, null);
+            dado.Insert(2, null);
+            dado.Insert(3, null);
         }
 
         public static Boolean isNull()
