@@ -6,21 +6,26 @@ using System.Threading.Tasks;
 
 namespace arquitetura_simulador
 {
-    class PC
+    public static class PC
     {
-        private int endereco;
+        private static int endereco = -1;
 
-        public PC()
+        public static int getEndereco()
         {
-            this.endereco = 0;
+            return endereco;
         }
 
-        public int getEndereco()
+        public static int getEnderecoAndInc()
         {
-            return endereco++;
+            if (endereco == 4)
+            {
+                endereco = 0;
+            }
+            endereco++;
+            return endereco;
         }
 
-        public void setEndereco(int end)
+        public static void setEndereco(int end)
         {
             endereco = end;
         }

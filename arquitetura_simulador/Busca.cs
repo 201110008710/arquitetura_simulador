@@ -6,20 +6,11 @@ using System.Threading.Tasks;
 
 namespace arquitetura_simulador
 {
-    class Busca
+    public static class Busca
     {
-        private Memoria mem;
-        private PC pc;
-
-        public Busca()
+        public static String getPalavra()
         {
-            this.mem = new Memoria();
-            this.pc = new PC();
-        }
-
-        public long getPalavra()
-        {
-            return mem.getDado(pc.getEndereco());
+            return Memoria.getDado(PC.getEndereco());
         }
     }
 }

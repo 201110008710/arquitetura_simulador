@@ -6,20 +6,11 @@ using System.Threading.Tasks;
 
 namespace arquitetura_simulador
 {
-    class Execucao
+    static class Execucao
     {
-        Decodificador dec;
-        ULA ula;
 
-        public Execucao()
+        static public void instrucao(int inst, long operando1, long operando2)
         {
-            this.dec = new Decodificador();
-            this.ula = new ULA();
-        }
-
-        public void instrucao(int inst, long operando1, long operando2)
-        {
-
             switch (inst)
             {
                 case 0: //Soma

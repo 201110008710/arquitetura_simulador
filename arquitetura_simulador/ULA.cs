@@ -6,119 +6,172 @@ using System.Threading.Tasks;
 
 namespace arquitetura_simulador
 {
-    class ULA
+    static class ULA
     {
         // Flags [0 0 0 0] -> [Z NZ D0 O]
-        private int[] flags;
+        private static int[] flags = { 0, 0, 0, 0 };
 
-        public ULA()
+        static public int[] getFlags()
         {
-            this.flags = new int[4];
-            this.flags[0] = 0;
-            this.flags[1] = 0;
-            this.flags[2] = 0;
-            this.flags[3] = 0;
+            return flags;
         }
 
-                public long soma(long operando1, long operando2)
+        static public long getResultado()
         {
+            return;
+        }
+
+        static public long soma(long operando1, long operando2)
+        {
+            zerarFlags();
             long soma = operando1 + operando2;
-            if (soma < -2147483647 || soma > 2147483647)
-            {
-                flags[4] = 1;
-            }
             if (soma == 0)
             {
-                flags[1] = 1;
-                flags[2] = 0;
+                flags[0] = 1;
+                flags[1] = 0;
             }
-            flags[2] = 1;
+            flags[2] = 0;
+            if (soma < -132768 || soma > 132768)
+            {
+                flags[3] = 1;
+            }
             return soma;
         }
 
-        public long subtracao(long operando1, long operando2)
+        static public long subtracao(long operando1, long operando2)
         {
-            if ((operando1 - operando2) == 0)
+            zerarFlags();
+            long subtracao = operando1 - operando2;
+            if (subtracao == 0)
             {
-                flags[1] = 1;
-                flags[2] = 0;
+                flags[0] = 1;
+                flags[1] = 0;
             }
-            flags[2] = 1;
-            return (operando1 - operando2);
+            flags[2] = 0;
+            if (subtracao < -132768 || subtracao > 132768)
+            {
+                flags[3] = 1;
+            }
+            return subtracao;
         }
 
-        public long multiplicacao(long operando1, long operando2)
+        static public long multiplicacao(long operando1, long operando2)
         {
-            if ((operando1 * operando2) == 0)
+            zerarFlags();
+            long multiplicacao = operando1 * operando2;
+            if (multiplicacao == 0)
             {
-                flags[1] = 1;
-                flags[2] = 0;
+                flags[0] = 1;
+                flags[1] = 0;
             }
-            flags[2] = 1;
-            return (operando1 * operando2);
+            flags[2] = 0;
+            if (multiplicacao < -132768 || multiplicacao > 132768)
+            {
+                flags[3] = 1;
+            }
+            return multiplicacao;
         }
 
-        public long divisao(long operando1, long operando2)
+        static public long divisao(long operando1, long operando2)
         {
-            if ((operando1 / operando2) == 0)
+            zerarFlags();
+            long divisao = 0;
+            if (operando2 == 0)
             {
-                flags[1] = 1;
-                flags[2] = 0;
+                flags[2] = 1;
             }
-            flags[2] = 1;
-            return (operando1 / operando2);
+            else
+            {
+                divisao = operando1 / operando2;
+                if (divisao == 0)
+                {
+                    flags[0] = 1;
+                    flags[1] = 0;
+                }
+                if (divisao < -132768 || divisao > 132768)
+                {
+                    flags[3] = 1;
+                }
+            }
+            return divisao;
         }
 
-        public long and(long operando1, long operando2)
+        static public long and(long operando1, long operando2)
         {
+            zerarFlags();
             return (operando1 & operando2);
         }
 
-        public long not(long operando1)
+        static public long not(long operando1)
         {
+            zerarFlags();
             return (~operando1);
         }
 
-        public long or(long operando1, long operando2)
+        static public long or(long operando1, long operando2)
         {
+            zerarFlags();
             return (operando1 | operando2);
         }
 
-        public long xor(long operando1, long operando2)
+        static public long xor(long operando1, long operando2)
         {
+            zerarFlags();
             return (operando1 ^ operando2);
         }
 
-        public long shiftLeft(long operando1, int operando2)
+        static public long shiftLeft(long operando1, int operando2)
         {
+            zerarFlags();
             return (operando1 << operando2);
         }
 
-        public long shiftRight(long operando1, int operando2)
+        static public long shiftRight(long operando1, int operando2)
         {
+            zerarFlags();
             return (operando1 >> operando2);
         }
 
-        public long incremento(long operando1)
+        static public long incremento(long operando1)
         {
-            if ((operando1 + 1) == 0)
+            zerarFlags();
+            long incremento = operando1 + 1;
+            if (incremento == 0)
             {
-                flags[1] = 1;
-                flags[2] = 0;
+                flags[0] = 1;
+                flags[1] = 0;
             }
             flags[2] = 0;
-            return (operando1 + 1);
+            if (incremento < -132768 || incremento > 132768)
+            {
+                flags[3] = 1;
+            }
+            return incremento;
         }
 
-        public long decremento(long operando1)
+        static public long decremento(long operando1)
         {
+            zerarFlags();
+            long decremento = operando1 - 1;
             if ((operando1 - 1) == 0)
             {
-                flags[1] = 1;
-                flags[2] = 0;
+                flags[0] = 1;
+                flags[1] = 0;
             }
             flags[2] = 0;
-            return (operando1 - 1);
+            if (decremento < -132768 || decremento > 132768)
+            {
+                flags[3] = 1;
+            }
+            return decremento;
+        }
+
+        static private void zerarFlags()
+        {
+            flags[0] = 0;
+            flags[1] = 0;
+            flags[2] = 0;
+            flags[3] = 0;
         }
     }
 }

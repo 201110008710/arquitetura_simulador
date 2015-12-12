@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace arquitetura_simulador
 {
-    class Decodificador
+    public static class Decodificador
     {
-        private Busca bus = new Busca();
 
-        public long getInstrucao()
+        public static long getInstrucao()
         {
-            return (bus.getPalavra() & 0x3C000) >> 14;
+            return (Convert.ToInt64(Busca.getPalavra(), 2) & 0xF0000000) >> 28;
         }
 
-        public long getOperando1()
+        public static long getOperando1()
         {
-            return (bus.getPalavra() & 0xFFFC0000) >> 18;
+            return (Convert.ToInt64(Busca.getPalavra(), 2) & 0xFFFC000) >> 14;
         }
 
-        public long getOperando2()
+        public static long getOperando2()
         {
-            return (bus.getPalavra() & 0x3FFF);
+            return (Convert.ToInt64(Busca.getPalavra(), 2) & 0x3FFF);
         }
+        
     }
 }

@@ -7,28 +7,37 @@ using System.Threading.Tasks;
 
 namespace arquitetura_simulador
 {
-    class Memoria
+    public static class Memoria
     {
-        private ArrayList dado;
+        private static ArrayList dado = new ArrayList();
 
-        public Memoria()
+        public static String getDado(int posicao)
         {
-            this.dado = new ArrayList();
+            return dado[posicao].ToString();
         }
 
-        public long getDado(int posicao)
-        {
-            return Convert.ToInt64(dado[posicao]);
-        }
-
-        public void addDado(int posicao, long info)
+        public static void addDado(int posicao, String info)
         {
             dado.Insert(posicao, info);
         }
 
-        public void addDado(long info)
+        public static void addDado(String info)
         {
             dado.Add(info);
+        }
+
+        public static void clearAll()
+        {
+            dado.Clear();
+        }
+
+        public static Boolean isNull()
+        {
+            if (dado.Count == 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

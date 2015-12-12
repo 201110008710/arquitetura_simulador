@@ -37,10 +37,10 @@
             this.picMemoria2 = new System.Windows.Forms.PictureBox();
             this.picMemoria0 = new System.Windows.Forms.PictureBox();
             this.picMemoria1 = new System.Windows.Forms.PictureBox();
-            this.txtMemoria3 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.txtMemoria2 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.groupBox23 = new System.Windows.Forms.GroupBox();
+            this.txtMemoria3 = new System.Windows.Forms.TextBox();
+            this.groupBox22 = new System.Windows.Forms.GroupBox();
+            this.txtMemoria2 = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtMemoria0 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -54,8 +54,8 @@
             this.txtBusca = new System.Windows.Forms.TextBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.picExec = new System.Windows.Forms.PictureBox();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.txtExec = new System.Windows.Forms.TextBox();
+            this.groupBox24 = new System.Windows.Forms.GroupBox();
+            this.txtOperacao = new System.Windows.Forms.TextBox();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.picULAStatus = new System.Windows.Forms.PictureBox();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
@@ -75,7 +75,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StatusClock = new System.Windows.Forms.ToolStripStatusLabel();
             this.btClock = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -93,11 +93,11 @@
             this.picDecodOpe1 = new System.Windows.Forms.PictureBox();
             this.picDecodOpe2 = new System.Windows.Forms.PictureBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.txtDecodInst = new System.Windows.Forms.TextBox();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.txtDecodInst = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPC)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -106,8 +106,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMemoria2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMemoria0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMemoria1)).BeginInit();
-            this.txtMemoria3.SuspendLayout();
-            this.txtMemoria2.SuspendLayout();
+            this.groupBox23.SuspendLayout();
+            this.groupBox22.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -117,7 +117,7 @@
             this.groupBox10.SuspendLayout();
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExec)).BeginInit();
-            this.groupBox15.SuspendLayout();
+            this.groupBox24.SuspendLayout();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picULAStatus)).BeginInit();
             this.groupBox17.SuspendLayout();
@@ -136,9 +136,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDecodOpe1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDecodOpe2)).BeginInit();
             this.groupBox7.SuspendLayout();
-            this.groupBox14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.groupBox13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.groupBox14.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -148,7 +148,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 55);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(160, 256);
+            this.groupBox1.Size = new System.Drawing.Size(170, 256);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PC";
@@ -156,7 +156,7 @@
             // picPC
             // 
             this.picPC.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.picPC.Location = new System.Drawing.Point(10, 121);
+            this.picPC.Location = new System.Drawing.Point(8, 121);
             this.picPC.Name = "picPC";
             this.picPC.Size = new System.Drawing.Size(25, 26);
             this.picPC.TabIndex = 13;
@@ -166,9 +166,9 @@
             // 
             this.groupBox2.Controls.Add(this.txtPC);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(41, 109);
+            this.groupBox2.Location = new System.Drawing.Point(39, 109);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(77, 50);
+            this.groupBox2.Size = new System.Drawing.Size(90, 50);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço 0";
@@ -177,9 +177,9 @@
             // 
             this.txtPC.Location = new System.Drawing.Point(8, 18);
             this.txtPC.Name = "txtPC";
-            this.txtPC.Size = new System.Drawing.Size(62, 20);
+            this.txtPC.ReadOnly = true;
+            this.txtPC.Size = new System.Drawing.Size(75, 20);
             this.txtPC.TabIndex = 3;
-            this.txtPC.Text = "00000000";
             this.txtPC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox3
@@ -188,14 +188,14 @@
             this.groupBox3.Controls.Add(this.picMemoria2);
             this.groupBox3.Controls.Add(this.picMemoria0);
             this.groupBox3.Controls.Add(this.picMemoria1);
-            this.groupBox3.Controls.Add(this.txtMemoria3);
-            this.groupBox3.Controls.Add(this.txtMemoria2);
+            this.groupBox3.Controls.Add(this.groupBox23);
+            this.groupBox3.Controls.Add(this.groupBox22);
             this.groupBox3.Controls.Add(this.groupBox6);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(178, 55);
+            this.groupBox3.Location = new System.Drawing.Point(188, 55);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(160, 256);
+            this.groupBox3.Size = new System.Drawing.Size(170, 256);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "MEMÓRIA";
@@ -203,7 +203,7 @@
             // picMemoria3
             // 
             this.picMemoria3.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.picMemoria3.Location = new System.Drawing.Point(11, 206);
+            this.picMemoria3.Location = new System.Drawing.Point(9, 206);
             this.picMemoria3.Name = "picMemoria3";
             this.picMemoria3.Size = new System.Drawing.Size(25, 26);
             this.picMemoria3.TabIndex = 12;
@@ -212,7 +212,7 @@
             // picMemoria2
             // 
             this.picMemoria2.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.picMemoria2.Location = new System.Drawing.Point(11, 150);
+            this.picMemoria2.Location = new System.Drawing.Point(9, 150);
             this.picMemoria2.Name = "picMemoria2";
             this.picMemoria2.Size = new System.Drawing.Size(25, 26);
             this.picMemoria2.TabIndex = 13;
@@ -221,7 +221,7 @@
             // picMemoria0
             // 
             this.picMemoria0.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.picMemoria0.Location = new System.Drawing.Point(11, 36);
+            this.picMemoria0.Location = new System.Drawing.Point(9, 36);
             this.picMemoria0.Name = "picMemoria0";
             this.picMemoria0.Size = new System.Drawing.Size(25, 26);
             this.picMemoria0.TabIndex = 11;
@@ -230,59 +230,59 @@
             // picMemoria1
             // 
             this.picMemoria1.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.picMemoria1.Location = new System.Drawing.Point(11, 92);
+            this.picMemoria1.Location = new System.Drawing.Point(9, 92);
             this.picMemoria1.Name = "picMemoria1";
             this.picMemoria1.Size = new System.Drawing.Size(25, 26);
             this.picMemoria1.TabIndex = 10;
             this.picMemoria1.TabStop = false;
             // 
+            // groupBox23
+            // 
+            this.groupBox23.Controls.Add(this.txtMemoria3);
+            this.groupBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox23.Location = new System.Drawing.Point(40, 194);
+            this.groupBox23.Name = "groupBox23";
+            this.groupBox23.Size = new System.Drawing.Size(90, 50);
+            this.groupBox23.TabIndex = 9;
+            this.groupBox23.TabStop = false;
+            this.groupBox23.Text = "Endereço 3";
+            // 
             // txtMemoria3
             // 
-            this.txtMemoria3.Controls.Add(this.textBox6);
-            this.txtMemoria3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMemoria3.Location = new System.Drawing.Point(42, 194);
+            this.txtMemoria3.Location = new System.Drawing.Point(8, 19);
             this.txtMemoria3.Name = "txtMemoria3";
-            this.txtMemoria3.Size = new System.Drawing.Size(77, 50);
-            this.txtMemoria3.TabIndex = 9;
-            this.txtMemoria3.TabStop = false;
-            this.txtMemoria3.Text = "Endereço 3";
+            this.txtMemoria3.ReadOnly = true;
+            this.txtMemoria3.Size = new System.Drawing.Size(75, 20);
+            this.txtMemoria3.TabIndex = 3;
+            this.txtMemoria3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox6
+            // groupBox22
             // 
-            this.textBox6.Location = new System.Drawing.Point(8, 19);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(62, 20);
-            this.textBox6.TabIndex = 3;
-            this.textBox6.Text = "00000000";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.groupBox22.Controls.Add(this.txtMemoria2);
+            this.groupBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox22.Location = new System.Drawing.Point(40, 138);
+            this.groupBox22.Name = "groupBox22";
+            this.groupBox22.Size = new System.Drawing.Size(90, 50);
+            this.groupBox22.TabIndex = 9;
+            this.groupBox22.TabStop = false;
+            this.groupBox22.Text = "Endereço 2";
             // 
             // txtMemoria2
             // 
-            this.txtMemoria2.Controls.Add(this.textBox5);
-            this.txtMemoria2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMemoria2.Location = new System.Drawing.Point(42, 138);
+            this.txtMemoria2.Location = new System.Drawing.Point(8, 19);
             this.txtMemoria2.Name = "txtMemoria2";
-            this.txtMemoria2.Size = new System.Drawing.Size(77, 50);
-            this.txtMemoria2.TabIndex = 9;
-            this.txtMemoria2.TabStop = false;
-            this.txtMemoria2.Text = "Endereço 2";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(8, 19);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(62, 20);
-            this.textBox5.TabIndex = 3;
-            this.textBox5.Text = "00000000";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMemoria2.ReadOnly = true;
+            this.txtMemoria2.Size = new System.Drawing.Size(75, 20);
+            this.txtMemoria2.TabIndex = 3;
+            this.txtMemoria2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.txtMemoria0);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(42, 24);
+            this.groupBox6.Location = new System.Drawing.Point(40, 24);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(77, 50);
+            this.groupBox6.Size = new System.Drawing.Size(90, 50);
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Endereço 0";
@@ -291,9 +291,9 @@
             // 
             this.txtMemoria0.Location = new System.Drawing.Point(8, 18);
             this.txtMemoria0.Name = "txtMemoria0";
-            this.txtMemoria0.Size = new System.Drawing.Size(62, 20);
+            this.txtMemoria0.ReadOnly = true;
+            this.txtMemoria0.Size = new System.Drawing.Size(75, 20);
             this.txtMemoria0.TabIndex = 3;
-            this.txtMemoria0.Text = "00000000";
             this.txtMemoria0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox4
@@ -302,9 +302,9 @@
             this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Controls.Add(this.txtMemoria1);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(42, 80);
+            this.groupBox4.Location = new System.Drawing.Point(40, 80);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(77, 50);
+            this.groupBox4.Size = new System.Drawing.Size(90, 50);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Endereço 1";
@@ -317,7 +317,7 @@
             this.pictureBox3.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
             this.pictureBox3.Location = new System.Drawing.Point(-32, -94);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(34, 26);
+            this.pictureBox3.Size = new System.Drawing.Size(47, 26);
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             // 
@@ -344,9 +344,9 @@
             // 
             this.txtMemoria1.Location = new System.Drawing.Point(8, 19);
             this.txtMemoria1.Name = "txtMemoria1";
-            this.txtMemoria1.Size = new System.Drawing.Size(62, 20);
+            this.txtMemoria1.ReadOnly = true;
+            this.txtMemoria1.Size = new System.Drawing.Size(75, 20);
             this.txtMemoria1.TabIndex = 3;
-            this.txtMemoria1.Text = "00000000";
             this.txtMemoria1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox9
@@ -354,9 +354,9 @@
             this.groupBox9.Controls.Add(this.picBusca);
             this.groupBox9.Controls.Add(this.groupBox10);
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox9.Location = new System.Drawing.Point(344, 55);
+            this.groupBox9.Location = new System.Drawing.Point(364, 55);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(160, 256);
+            this.groupBox9.Size = new System.Drawing.Size(170, 256);
             this.groupBox9.TabIndex = 14;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "BUSCA";
@@ -364,7 +364,7 @@
             // picBusca
             // 
             this.picBusca.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.picBusca.Location = new System.Drawing.Point(10, 121);
+            this.picBusca.Location = new System.Drawing.Point(8, 121);
             this.picBusca.Name = "picBusca";
             this.picBusca.Size = new System.Drawing.Size(25, 26);
             this.picBusca.TabIndex = 13;
@@ -374,9 +374,9 @@
             // 
             this.groupBox10.Controls.Add(this.txtBusca);
             this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox10.Location = new System.Drawing.Point(41, 109);
+            this.groupBox10.Location = new System.Drawing.Point(39, 109);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(77, 50);
+            this.groupBox10.Size = new System.Drawing.Size(90, 50);
             this.groupBox10.TabIndex = 12;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Palavra";
@@ -385,19 +385,19 @@
             // 
             this.txtBusca.Location = new System.Drawing.Point(8, 18);
             this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(62, 20);
+            this.txtBusca.ReadOnly = true;
+            this.txtBusca.Size = new System.Drawing.Size(75, 20);
             this.txtBusca.TabIndex = 3;
-            this.txtBusca.Text = "00000000";
             this.txtBusca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.picExec);
-            this.groupBox12.Controls.Add(this.groupBox15);
+            this.groupBox12.Controls.Add(this.groupBox24);
             this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox12.Location = new System.Drawing.Point(676, 55);
+            this.groupBox12.Location = new System.Drawing.Point(716, 55);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(160, 256);
+            this.groupBox12.Size = new System.Drawing.Size(170, 256);
             this.groupBox12.TabIndex = 15;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "EXECUÇÃO";
@@ -405,31 +405,31 @@
             // picExec
             // 
             this.picExec.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.picExec.Location = new System.Drawing.Point(12, 121);
+            this.picExec.Location = new System.Drawing.Point(10, 121);
             this.picExec.Name = "picExec";
             this.picExec.Size = new System.Drawing.Size(25, 26);
             this.picExec.TabIndex = 13;
             this.picExec.TabStop = false;
             // 
-            // groupBox15
+            // groupBox24
             // 
-            this.groupBox15.Controls.Add(this.txtExec);
-            this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox15.Location = new System.Drawing.Point(43, 109);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(77, 50);
-            this.groupBox15.TabIndex = 12;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Palavra";
+            this.groupBox24.Controls.Add(this.txtOperacao);
+            this.groupBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox24.Location = new System.Drawing.Point(41, 109);
+            this.groupBox24.Name = "groupBox24";
+            this.groupBox24.Size = new System.Drawing.Size(90, 50);
+            this.groupBox24.TabIndex = 12;
+            this.groupBox24.TabStop = false;
+            this.groupBox24.Text = "Operação";
             // 
-            // txtExec
+            // txtOperacao
             // 
-            this.txtExec.Location = new System.Drawing.Point(8, 18);
-            this.txtExec.Name = "txtExec";
-            this.txtExec.Size = new System.Drawing.Size(62, 20);
-            this.txtExec.TabIndex = 3;
-            this.txtExec.Text = "00000000";
-            this.txtExec.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtOperacao.Location = new System.Drawing.Point(8, 18);
+            this.txtOperacao.Name = "txtOperacao";
+            this.txtOperacao.ReadOnly = true;
+            this.txtOperacao.Size = new System.Drawing.Size(75, 20);
+            this.txtOperacao.TabIndex = 3;
+            this.txtOperacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox16
             // 
@@ -439,9 +439,9 @@
             this.groupBox16.Controls.Add(this.groupBox19);
             this.groupBox16.Controls.Add(this.groupBox21);
             this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox16.Location = new System.Drawing.Point(842, 55);
+            this.groupBox16.Location = new System.Drawing.Point(892, 55);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(160, 256);
+            this.groupBox16.Size = new System.Drawing.Size(170, 256);
             this.groupBox16.TabIndex = 15;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "ULA";
@@ -449,7 +449,7 @@
             // picULAStatus
             // 
             this.picULAStatus.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.picULAStatus.Location = new System.Drawing.Point(11, 91);
+            this.picULAStatus.Location = new System.Drawing.Point(9, 91);
             this.picULAStatus.Name = "picULAStatus";
             this.picULAStatus.Size = new System.Drawing.Size(25, 26);
             this.picULAStatus.TabIndex = 12;
@@ -461,9 +461,9 @@
             this.groupBox17.Controls.Add(this.groupBox18);
             this.groupBox17.Controls.Add(this.txtULAStatus);
             this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox17.Location = new System.Drawing.Point(42, 79);
+            this.groupBox17.Location = new System.Drawing.Point(40, 79);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(77, 50);
+            this.groupBox17.Size = new System.Drawing.Size(90, 50);
             this.groupBox17.TabIndex = 11;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Status";
@@ -476,7 +476,7 @@
             this.pictureBox2.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
             this.pictureBox2.Location = new System.Drawing.Point(-32, -94);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 26);
+            this.pictureBox2.Size = new System.Drawing.Size(47, 26);
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
@@ -503,15 +503,15 @@
             // 
             this.txtULAStatus.Location = new System.Drawing.Point(8, 19);
             this.txtULAStatus.Name = "txtULAStatus";
-            this.txtULAStatus.Size = new System.Drawing.Size(62, 20);
+            this.txtULAStatus.ReadOnly = true;
+            this.txtULAStatus.Size = new System.Drawing.Size(75, 20);
             this.txtULAStatus.TabIndex = 3;
-            this.txtULAStatus.Text = "000000";
             this.txtULAStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // picULAResultado
             // 
             this.picULAResultado.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.picULAResultado.Location = new System.Drawing.Point(11, 35);
+            this.picULAResultado.Location = new System.Drawing.Point(9, 35);
             this.picULAResultado.Name = "picULAResultado";
             this.picULAResultado.Size = new System.Drawing.Size(25, 26);
             this.picULAResultado.TabIndex = 10;
@@ -523,9 +523,9 @@
             this.groupBox19.Controls.Add(this.groupBox20);
             this.groupBox19.Controls.Add(this.txtULARes);
             this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox19.Location = new System.Drawing.Point(42, 23);
+            this.groupBox19.Location = new System.Drawing.Point(40, 23);
             this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(77, 50);
+            this.groupBox19.Size = new System.Drawing.Size(90, 50);
             this.groupBox19.TabIndex = 2;
             this.groupBox19.TabStop = false;
             this.groupBox19.Text = "Resultado";
@@ -538,7 +538,7 @@
             this.pictureBox5.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
             this.pictureBox5.Location = new System.Drawing.Point(-32, -94);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(34, 26);
+            this.pictureBox5.Size = new System.Drawing.Size(47, 26);
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
             // 
@@ -565,9 +565,9 @@
             // 
             this.txtULARes.Location = new System.Drawing.Point(8, 19);
             this.txtULARes.Name = "txtULARes";
-            this.txtULARes.Size = new System.Drawing.Size(62, 20);
+            this.txtULARes.ReadOnly = true;
+            this.txtULARes.Size = new System.Drawing.Size(75, 20);
             this.txtULARes.TabIndex = 3;
-            this.txtULARes.Text = "00000000";
             this.txtULARes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox21
@@ -577,9 +577,9 @@
             this.groupBox21.Controls.Add(this.checkBox1);
             this.groupBox21.Controls.Add(this.checkBox3);
             this.groupBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox21.Location = new System.Drawing.Point(8, 135);
+            this.groupBox21.Location = new System.Drawing.Point(7, 135);
             this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(145, 113);
+            this.groupBox21.Size = new System.Drawing.Size(156, 113);
             this.groupBox21.TabIndex = 17;
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "Status Detalhes:";
@@ -631,23 +631,23 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.StatusClock});
             this.statusStrip1.Location = new System.Drawing.Point(0, 370);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1015, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1073, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 16;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // StatusClock
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(45, 17);
-            this.toolStripStatusLabel1.Text = "Clocks:";
+            this.StatusClock.Name = "StatusClock";
+            this.StatusClock.Size = new System.Drawing.Size(45, 17);
+            this.StatusClock.Text = "Clocks:";
             // 
             // btClock
             // 
-            this.btClock.Location = new System.Drawing.Point(470, 331);
+            this.btClock.Location = new System.Drawing.Point(485, 331);
             this.btClock.Name = "btClock";
             this.btClock.Size = new System.Drawing.Size(75, 23);
             this.btClock.TabIndex = 17;
@@ -657,9 +657,9 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 317);
+            this.panel1.Location = new System.Drawing.Point(-18, 317);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(991, 50);
+            this.panel1.Size = new System.Drawing.Size(1080, 50);
             this.panel1.TabIndex = 18;
             // 
             // menuStrip1
@@ -669,7 +669,7 @@
             this.ajudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1015, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1073, 24);
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -722,29 +722,29 @@
             // 
             this.groupBox11.Controls.Add(this.txtDecodOp1);
             this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox11.Location = new System.Drawing.Point(42, 109);
+            this.groupBox11.Location = new System.Drawing.Point(40, 109);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(77, 50);
+            this.groupBox11.Size = new System.Drawing.Size(90, 50);
             this.groupBox11.TabIndex = 9;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Operando 1";
             // 
             // txtDecodOp1
             // 
-            this.txtDecodOp1.Location = new System.Drawing.Point(8, 19);
+            this.txtDecodOp1.Location = new System.Drawing.Point(9, 19);
             this.txtDecodOp1.Name = "txtDecodOp1";
-            this.txtDecodOp1.Size = new System.Drawing.Size(62, 20);
+            this.txtDecodOp1.ReadOnly = true;
+            this.txtDecodOp1.Size = new System.Drawing.Size(75, 20);
             this.txtDecodOp1.TabIndex = 3;
-            this.txtDecodOp1.Text = "00000000";
             this.txtDecodOp1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.txtDecodOp2);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(42, 165);
+            this.groupBox8.Location = new System.Drawing.Point(41, 165);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(77, 50);
+            this.groupBox8.Size = new System.Drawing.Size(90, 50);
             this.groupBox8.TabIndex = 9;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Operando 2";
@@ -753,15 +753,15 @@
             // 
             this.txtDecodOp2.Location = new System.Drawing.Point(8, 19);
             this.txtDecodOp2.Name = "txtDecodOp2";
-            this.txtDecodOp2.Size = new System.Drawing.Size(62, 20);
+            this.txtDecodOp2.ReadOnly = true;
+            this.txtDecodOp2.Size = new System.Drawing.Size(75, 20);
             this.txtDecodOp2.TabIndex = 3;
-            this.txtDecodOp2.Text = "00000000";
             this.txtDecodOp2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // picDecodInst
             // 
             this.picDecodInst.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.picDecodInst.Location = new System.Drawing.Point(11, 63);
+            this.picDecodInst.Location = new System.Drawing.Point(9, 65);
             this.picDecodInst.Name = "picDecodInst";
             this.picDecodInst.Size = new System.Drawing.Size(25, 26);
             this.picDecodInst.TabIndex = 10;
@@ -770,7 +770,7 @@
             // picDecodOpe1
             // 
             this.picDecodOpe1.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.picDecodOpe1.Location = new System.Drawing.Point(11, 121);
+            this.picDecodOpe1.Location = new System.Drawing.Point(10, 121);
             this.picDecodOpe1.Name = "picDecodOpe1";
             this.picDecodOpe1.Size = new System.Drawing.Size(25, 26);
             this.picDecodOpe1.TabIndex = 13;
@@ -779,7 +779,7 @@
             // picDecodOpe2
             // 
             this.picDecodOpe2.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.picDecodOpe2.Location = new System.Drawing.Point(11, 177);
+            this.picDecodOpe2.Location = new System.Drawing.Point(10, 177);
             this.picDecodOpe2.Name = "picDecodOpe2";
             this.picDecodOpe2.Size = new System.Drawing.Size(25, 26);
             this.picDecodOpe2.TabIndex = 12;
@@ -794,21 +794,37 @@
             this.groupBox7.Controls.Add(this.groupBox11);
             this.groupBox7.Controls.Add(this.groupBox13);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(510, 55);
+            this.groupBox7.Location = new System.Drawing.Point(540, 55);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(160, 256);
+            this.groupBox7.Size = new System.Drawing.Size(170, 256);
             this.groupBox7.TabIndex = 14;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "DECODIFICADOR";
             // 
-            // txtDecodInst
+            // groupBox13
             // 
-            this.txtDecodInst.Location = new System.Drawing.Point(8, 19);
-            this.txtDecodInst.Name = "txtDecodInst";
-            this.txtDecodInst.Size = new System.Drawing.Size(62, 20);
-            this.txtDecodInst.TabIndex = 3;
-            this.txtDecodInst.Text = "00000000";
-            this.txtDecodInst.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.groupBox13.Controls.Add(this.pictureBox6);
+            this.groupBox13.Controls.Add(this.groupBox14);
+            this.groupBox13.Controls.Add(this.txtDecodInst);
+            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox13.Location = new System.Drawing.Point(40, 53);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(90, 50);
+            this.groupBox13.TabIndex = 2;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Instrução";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
+            this.pictureBox6.Location = new System.Drawing.Point(-32, -94);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(47, 26);
+            this.pictureBox6.TabIndex = 4;
+            this.pictureBox6.TabStop = false;
             // 
             // groupBox14
             // 
@@ -829,36 +845,20 @@
             this.textBox8.TabIndex = 3;
             this.textBox8.Text = "00000000";
             // 
-            // pictureBox6
+            // txtDecodInst
             // 
-            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.pictureBox6.Location = new System.Drawing.Point(-32, -94);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(34, 26);
-            this.pictureBox6.TabIndex = 4;
-            this.pictureBox6.TabStop = false;
-            // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.pictureBox6);
-            this.groupBox13.Controls.Add(this.groupBox14);
-            this.groupBox13.Controls.Add(this.txtDecodInst);
-            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox13.Location = new System.Drawing.Point(42, 51);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(77, 50);
-            this.groupBox13.TabIndex = 2;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Instrução";
+            this.txtDecodInst.Location = new System.Drawing.Point(8, 19);
+            this.txtDecodInst.Name = "txtDecodInst";
+            this.txtDecodInst.ReadOnly = true;
+            this.txtDecodInst.Size = new System.Drawing.Size(75, 20);
+            this.txtDecodInst.TabIndex = 3;
+            this.txtDecodInst.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frmSimulador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 392);
+            this.ClientSize = new System.Drawing.Size(1073, 392);
             this.Controls.Add(this.btClock);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -883,10 +883,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMemoria2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMemoria0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMemoria1)).EndInit();
-            this.txtMemoria3.ResumeLayout(false);
-            this.txtMemoria3.PerformLayout();
-            this.txtMemoria2.ResumeLayout(false);
-            this.txtMemoria2.PerformLayout();
+            this.groupBox23.ResumeLayout(false);
+            this.groupBox23.PerformLayout();
+            this.groupBox22.ResumeLayout(false);
+            this.groupBox22.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -900,8 +900,8 @@
             this.groupBox10.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picExec)).EndInit();
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
+            this.groupBox24.ResumeLayout(false);
+            this.groupBox24.PerformLayout();
             this.groupBox16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picULAStatus)).EndInit();
             this.groupBox17.ResumeLayout(false);
@@ -929,11 +929,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDecodOpe1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDecodOpe2)).EndInit();
             this.groupBox7.ResumeLayout(false);
-            this.groupBox14.ResumeLayout(false);
-            this.groupBox14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -950,10 +950,10 @@
         private System.Windows.Forms.PictureBox picMemoria2;
         private System.Windows.Forms.PictureBox picMemoria0;
         private System.Windows.Forms.PictureBox picMemoria1;
-        private System.Windows.Forms.GroupBox txtMemoria3;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.GroupBox txtMemoria2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.GroupBox groupBox23;
+        private System.Windows.Forms.TextBox txtMemoria3;
+        private System.Windows.Forms.GroupBox groupBox22;
+        private System.Windows.Forms.TextBox txtMemoria2;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox txtMemoria0;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -967,8 +967,8 @@
         private System.Windows.Forms.TextBox txtBusca;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.PictureBox picExec;
-        private System.Windows.Forms.GroupBox groupBox15;
-        private System.Windows.Forms.TextBox txtExec;
+        private System.Windows.Forms.GroupBox groupBox24;
+        private System.Windows.Forms.TextBox txtOperacao;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.PictureBox picULAStatus;
         private System.Windows.Forms.GroupBox groupBox17;
@@ -988,7 +988,7 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel StatusClock;
         private System.Windows.Forms.Button btClock;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
