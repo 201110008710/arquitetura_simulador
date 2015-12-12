@@ -15,9 +15,8 @@ namespace arquitetura_simulador
     public partial class frmSimulador : Form
     {
         String filename = null;
-        ArrayList buffer = new ArrayList();
+        Queue buffer = new Queue();
         int posicoes = 0;
-        int atualizacao = 0;
         int clock = 0;
         int clockTotal = 0;
 
@@ -32,18 +31,18 @@ namespace arquitetura_simulador
         #region simular
         private void simular(int i)
         {
-
             switch (i)
             {
                 case 0:
-                    if ()
-                    {
-
-                    }
                     clearTxtLabels();
+                    clearULAStatus();
+                    txtPC.Text = PC.getEnderecoAndInc().ToString();
                     setarImagensInvisiveis();
                     picPC.Visible = true;
-                    txtPC.Text = PC.getEnderecoAndInc().ToString();
+                    if (PC.getEndereco() == 0)
+                    {
+                        atualizarMemoria();
+                    }
                     break;
                 case 1:
                     setarImagensInvisiveis();
@@ -62,6 +61,7 @@ namespace arquitetura_simulador
                     txtDecodInst.Text = string.Format("0x{0:X}", Decodificador.getInstrucao());
                     txtDecodOp1.Text = string.Format("0x{0:X}", Decodificador.getOperando1());
                     txtDecodOp2.Text = string.Format("0x{0:X}", Decodificador.getOperando2());
+
                     break;
                 case 4:
                     setarImagensInvisiveis();
@@ -102,20 +102,6 @@ namespace arquitetura_simulador
         }
         #endregion
 
-        #region clearTxtLabels
-        private void clearTxtLabels()
-        {
-            txtPC.Text = "";
-            txtBusca.Text = "";
-            txtDecodInst.Text = "";
-            txtDecodOp1.Text = "";
-            txtDecodOp2.Text = "";
-            txtOperacao.Text = "";
-            txtULARes.Text = "";
-            txtULAStatus.Text = "";
-        }
-        #endregion
-
         #region setarStatusULA
         private void setarStatusULA()
         {
@@ -135,6 +121,147 @@ namespace arquitetura_simulador
                 cbOverflow.Checked = true;
             else
                 cbOverflow.Checked = false;
+        }
+        #endregion
+
+        #region setarImagensInvisiveis
+        private void setarImagensInvisiveis()
+        {
+            picPC.Visible = false;
+            picMemoria0.Visible = false;
+            picMemoria1.Visible = false;
+            picMemoria2.Visible = false;
+            picMemoria3.Visible = false;
+            picBusca.Visible = false;
+            picDecodInst.Visible = false;
+            picDecodOpe1.Visible = false;
+            picDecodOpe2.Visible = false;
+            picExec.Visible = false;
+            picULAResultado.Visible = false;
+            picULAStatus.Visible = false;
+        }
+        #endregion
+
+        #region setarMemoriaTxtLabels
+        public void setarMemoriaTxtLabels()
+        {
+            if (Memoria.getDado(0) != "")
+                txtMemoria0.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(0), 2));
+            else
+                txtMemoria0.Text = "";
+            if (Memoria.getDado(1) != "")
+                txtMemoria1.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(1), 2));
+            else
+                txtMemoria1.Text = "";
+            if (Memoria.getDado(2) != "")
+                txtMemoria2.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(2), 2));
+            else
+                txtMemoria2.Text = "";
+            if (Memoria.getDado(3) != "")
+                txtMemoria3.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(3), 2));
+            else
+                txtMemoria3.Text = "";
+        }
+        #endregion
+
+        #region clearTxtLabels
+        private void clearTxtLabels()
+        {
+            txtPC.Text = "";
+            txtBusca.Text = "";
+            txtDecodInst.Text = "";
+            txtDecodOp1.Text = "";
+            txtDecodOp2.Text = "";
+            txtOperacao.Text = "";
+            txtULARes.Text = "";
+            txtULAStatus.Text = "";
+        }
+        #endregion
+
+        #region clearULAStatus
+        private void clearULAStatus()
+        {
+            cbZero.Checked = false;
+            cbNZero.Checked = false;
+            cbDiv.Checked = false;
+            cbOverflow.Checked = false;
+        }
+        #endregion
+
+        #region atualizarMemoria
+        public void atualizarMemoria()
+        {
+            Memoria.clearMemory();
+            int i = 0;
+            for (i = 0; buffer.Count > 0; i++)
+            {
+                Console.Out.WriteLine("Buffer: " + buffer.Count);
+                Console.Out.WriteLine("i:" + i);
+                if (i > 3)
+                {
+                    Console.Out.WriteLine("Break:" + i);
+                    break;
+                }
+                else
+                {
+                    Console.Out.WriteLine("Inserindo item: " + i);
+                    Memoria.insertDado(i, buffer.Dequeue().ToString());
+                }
+            }
+            setarMemoriaTxtLabels();
+        }
+        #endregion
+
+        #region atualizarClockStatus
+        private void atualizarClockStatus()
+        {
+            StatusClock.Text = "Clock: " + clockTotal;
+        }
+        #endregion
+
+        #region lerArquivo
+        public void lerArquivo(String filename)
+        {
+
+            String line;
+            if (filename != null)
+            {
+                try
+                {
+                    using (System.IO.StreamReader file = new System.IO.StreamReader(filename))
+                    {
+                        while ((line = file.ReadLine()) != null)
+                        {
+                            if (line.Length == 32)
+                            {
+                                buffer.Enqueue(line);
+                            }
+                            else
+                            {
+                                MessageBox.Show("O arquivo deve possuir 32 caracteres por linha!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                buffer.Clear();
+                            }
+                            posicoes++;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Não foi possível ler o arquivo!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                if (buffer.Count != 0)
+                {
+                    //txtMemoria0.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(0), 2));
+                    //txtMemoria1.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(1), 2));
+                    //txtMemoria2.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(2), 2));
+                    //txtMemoria3.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(3), 2));
+                }
+            }
+            else
+            {
+                MessageBox.Show("A memória está vazia!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
         #endregion
 
@@ -178,100 +305,6 @@ namespace arquitetura_simulador
         }
         #endregion
 
-        #region atualizarMemoria
-        public void atualizarMemoria()
-        {
-            Memoria.clearMemory();
-            int i = 0;
-            for (i = 0; i < buffer.Count; i++)
-                if (i > 3)
-                {
-                    break;
-                }
-                else
-                {
-                    Memoria.insertDado(i, buffer[i + 4 * atualizacao].ToString());
-                }
-            atualizacao++;
-            setarMemoriaTxtLabels();
-        }
-        #endregion
-
-        #region setarMemoriaTxtLabels
-        public void setarMemoriaTxtLabels()
-        {
-            txtMemoria0.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(0), 2));
-            txtMemoria1.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(1), 2));
-            txtMemoria2.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(2), 2));
-            txtMemoria3.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(3), 2));
-        }
-        #endregion
-
-        #region lerArquivo
-        public void lerArquivo(String filename)
-        {
-
-            String line;
-            if (filename != null)
-            {
-                try
-                {
-                    using (System.IO.StreamReader file = new System.IO.StreamReader(filename))
-                    {
-                        while ((line = file.ReadLine()) != null)
-                        {
-                            if (line.Length == 32)
-                            {
-                                buffer.Add(line);
-                            }
-                            else
-                            {
-                                MessageBox.Show("O arquivo deve possuir 32 caracteres por linha!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                buffer.Clear();
-                            }
-                            posicoes++;
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Não foi possível ler o arquivo!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                if (buffer.Count != 0)
-                {
-                    atualizarMemoria();
-                    //txtMemoria0.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(0), 2));
-                    //txtMemoria1.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(1), 2));
-                    //txtMemoria2.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(2), 2));
-                    //txtMemoria3.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(3), 2));
-                }
-            }
-            else
-            {
-                MessageBox.Show("A memória está vazia!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-        #endregion
-
-        #region setarImagensInvisiveis
-        private void setarImagensInvisiveis()
-        {
-            picPC.Visible = false;
-            picMemoria0.Visible = false;
-            picMemoria1.Visible = false;
-            picMemoria2.Visible = false;
-            picMemoria3.Visible = false;
-            picBusca.Visible = false;
-            picDecodInst.Visible = false;
-            picDecodOpe1.Visible = false;
-            picDecodOpe2.Visible = false;
-            picExec.Visible = false;
-            picULAResultado.Visible = false;
-            picULAStatus.Visible = false;
-        }
-        #endregion
-
         #region abrirArquivoAction
         private void abrirArquivoMenu_Click(object sender, EventArgs e)
         {
@@ -286,43 +319,26 @@ namespace arquitetura_simulador
         }
         #endregion
 
-        #region atualizarClockStatus
-        private void atualizarClockStatus()
-        {
-            StatusClock.Text = "Clock: " + clockTotal;
-        }
-        #endregion
-
-        private string parse(string palavra)
-        {
-            string valor = null;
-
-            if (palavra.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
-            {
-                palavra = palavra.Substring(2);
-                valor = Int64.Parse(palavra, NumberStyles.HexNumber).ToString();
-            }
-            if (palavra.StartsWith("0b", StringComparison.OrdinalIgnoreCase))
-            {
-                palavra = palavra.Substring(2);
-                valor = Convert.ToInt64(palavra, 2).ToString();
-            }
-            return valor;
-        }
-
         private void btClock_Click(object sender, EventArgs e)
         {
             Console.Out.WriteLine(posicoes);
-            if (Memoria.isNull() == false) 
+            if (posicoes != 0)
             {
-                simular(clock);
-                clock++;
-                if (clock == 5)
+                if (clockTotal < posicoes * 5)
                 {
-                    clock = 0;
+                    simular(clock);
+                    clock++;
+                    if (clock == 5)
+                    {
+                        clock = 0;
+                    }
+                    clockTotal++;
+                    atualizarClockStatus();
                 }
-                clockTotal++;
-                atualizarClockStatus();
+                else
+                {
+                    MessageBox.Show("Programa computado com sucesso!", "Terminou!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
             }
             else
             {

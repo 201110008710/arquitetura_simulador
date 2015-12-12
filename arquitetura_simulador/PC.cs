@@ -17,9 +17,9 @@ namespace arquitetura_simulador
 
         public static int getEnderecoAndInc()
         {
-            if (endereco == 4)
+            if (endereco == 3)
             {
-                endereco = 0;
+                endereco = -1;
             }
             endereco++;
             return endereco;

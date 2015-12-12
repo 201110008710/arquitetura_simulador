@@ -171,7 +171,7 @@
             this.groupBox2.Size = new System.Drawing.Size(90, 50);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Endereço 0";
+            this.groupBox2.Text = "Apontamento";
             // 
             // txtPC
             // 
@@ -642,6 +642,7 @@
             // StatusClock
             // 
             this.StatusClock.Name = "StatusClock";
+            this.StatusClock.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StatusClock.Size = new System.Drawing.Size(45, 17);
             this.StatusClock.Text = "Clocks:";
             // 

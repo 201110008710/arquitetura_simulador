@@ -16,11 +16,6 @@ namespace arquitetura_simulador
             return dado[posicao].ToString();
         }
 
-        public static void addDado(int posicao, String info)
-        {
-            dado.Insert(posicao, info);
-        }
-
         public static void addDado(String info)
         {
             dado.Add(info);
@@ -33,19 +28,10 @@ namespace arquitetura_simulador
 
         public static void clearMemory()
         {
-            dado.Insert(0, null);
-            dado.Insert(1, null);
-            dado.Insert(2, null);
-            dado.Insert(3, null);
-        }
-
-        public static Boolean isNull()
-        {
-            if (dado.Count == 0)
-            {
-                return true;
-            }
-            return false;
+            dado.Insert(0, "");
+            dado.Insert(1, "");
+            dado.Insert(2, "");
+            dado.Insert(3, "");
         }
     }
 }
