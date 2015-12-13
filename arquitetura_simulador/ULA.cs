@@ -95,6 +95,7 @@ namespace arquitetura_simulador
             if (operando2 == 0)
             {
                 flags[2] = 1;
+                flags[1] = 1;
             }
             else
             {

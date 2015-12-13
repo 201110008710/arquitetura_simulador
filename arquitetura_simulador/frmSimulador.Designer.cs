@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSimulador));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.picPC = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -89,10 +90,10 @@
             this.txtDecodOp1 = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.txtDecodOp2 = new System.Windows.Forms.TextBox();
-            this.picDecodInst = new System.Windows.Forms.PictureBox();
-            this.picDecodOpe1 = new System.Windows.Forms.PictureBox();
-            this.picDecodOpe2 = new System.Windows.Forms.PictureBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.picDecodOpe2 = new System.Windows.Forms.PictureBox();
+            this.picDecodOpe1 = new System.Windows.Forms.PictureBox();
+            this.picDecodInst = new System.Windows.Forms.PictureBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
@@ -132,10 +133,10 @@
             this.menuStrip1.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picDecodInst)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDecodOpe1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDecodOpe2)).BeginInit();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDecodOpe2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDecodOpe1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDecodInst)).BeginInit();
             this.groupBox13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.groupBox14.SuspendLayout();
@@ -687,7 +688,7 @@
             // 
             this.abrirArquivoMenu.Image = global::arquitetura_simulador.Properties.Resources.AddIco;
             this.abrirArquivoMenu.Name = "abrirArquivoMenu";
-            this.abrirArquivoMenu.Size = new System.Drawing.Size(145, 22);
+            this.abrirArquivoMenu.Size = new System.Drawing.Size(152, 22);
             this.abrirArquivoMenu.Text = "Abrir Arquivo";
             this.abrirArquivoMenu.Click += new System.EventHandler(this.abrirArquivoMenu_Click);
             // 
@@ -695,8 +696,9 @@
             // 
             this.sairMenu.Image = global::arquitetura_simulador.Properties.Resources.ExitIco;
             this.sairMenu.Name = "sairMenu";
-            this.sairMenu.Size = new System.Drawing.Size(145, 22);
+            this.sairMenu.Size = new System.Drawing.Size(152, 22);
             this.sairMenu.Text = "Sair";
+            this.sairMenu.Click += new System.EventHandler(this.sairMenu_Click);
             // 
             // ajudaToolStripMenuItem
             // 
@@ -712,6 +714,7 @@
             this.sobreMenu.Name = "sobreMenu";
             this.sobreMenu.Size = new System.Drawing.Size(104, 22);
             this.sobreMenu.Text = "Sobre";
+            this.sobreMenu.Click += new System.EventHandler(this.sobreMenu_Click);
             // 
             // openFileDialog1
             // 
@@ -759,33 +762,6 @@
             this.txtDecodOp2.TabIndex = 3;
             this.txtDecodOp2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // picDecodInst
-            // 
-            this.picDecodInst.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.picDecodInst.Location = new System.Drawing.Point(9, 65);
-            this.picDecodInst.Name = "picDecodInst";
-            this.picDecodInst.Size = new System.Drawing.Size(25, 26);
-            this.picDecodInst.TabIndex = 10;
-            this.picDecodInst.TabStop = false;
-            // 
-            // picDecodOpe1
-            // 
-            this.picDecodOpe1.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.picDecodOpe1.Location = new System.Drawing.Point(10, 121);
-            this.picDecodOpe1.Name = "picDecodOpe1";
-            this.picDecodOpe1.Size = new System.Drawing.Size(25, 26);
-            this.picDecodOpe1.TabIndex = 13;
-            this.picDecodOpe1.TabStop = false;
-            // 
-            // picDecodOpe2
-            // 
-            this.picDecodOpe2.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
-            this.picDecodOpe2.Location = new System.Drawing.Point(10, 177);
-            this.picDecodOpe2.Name = "picDecodOpe2";
-            this.picDecodOpe2.Size = new System.Drawing.Size(25, 26);
-            this.picDecodOpe2.TabIndex = 12;
-            this.picDecodOpe2.TabStop = false;
-            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.picDecodOpe2);
@@ -801,6 +777,33 @@
             this.groupBox7.TabIndex = 14;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "DECODIFICADOR";
+            // 
+            // picDecodOpe2
+            // 
+            this.picDecodOpe2.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
+            this.picDecodOpe2.Location = new System.Drawing.Point(10, 177);
+            this.picDecodOpe2.Name = "picDecodOpe2";
+            this.picDecodOpe2.Size = new System.Drawing.Size(25, 26);
+            this.picDecodOpe2.TabIndex = 12;
+            this.picDecodOpe2.TabStop = false;
+            // 
+            // picDecodOpe1
+            // 
+            this.picDecodOpe1.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
+            this.picDecodOpe1.Location = new System.Drawing.Point(10, 121);
+            this.picDecodOpe1.Name = "picDecodOpe1";
+            this.picDecodOpe1.Size = new System.Drawing.Size(25, 26);
+            this.picDecodOpe1.TabIndex = 13;
+            this.picDecodOpe1.TabStop = false;
+            // 
+            // picDecodInst
+            // 
+            this.picDecodInst.Image = global::arquitetura_simulador.Properties.Resources.SetaIco;
+            this.picDecodInst.Location = new System.Drawing.Point(9, 65);
+            this.picDecodInst.Name = "picDecodInst";
+            this.picDecodInst.Size = new System.Drawing.Size(25, 26);
+            this.picDecodInst.TabIndex = 10;
+            this.picDecodInst.TabStop = false;
             // 
             // groupBox13
             // 
@@ -871,9 +874,11 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "frmSimulador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simulador do Processador";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picPC)).EndInit();
@@ -926,10 +931,10 @@
             this.groupBox11.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picDecodInst)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDecodOpe1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDecodOpe2)).EndInit();
             this.groupBox7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picDecodOpe2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDecodOpe1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDecodInst)).EndInit();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();

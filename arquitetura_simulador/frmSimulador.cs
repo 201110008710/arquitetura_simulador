@@ -114,7 +114,7 @@ namespace arquitetura_simulador
             else
                 cbNZero.Checked = false;
             if (ULA.getFlags()[2] == 1)
-                cbNZero.Checked = true;
+                cbDiv.Checked = true;
             else
                 cbDiv.Checked = false;
             if (ULA.getFlags()[3] == 1)
@@ -188,6 +188,23 @@ namespace arquitetura_simulador
         }
         #endregion
 
+        #region clearSimulador
+        private void clearSimulador()
+        {
+            PC.setEndereco(-1);
+            Memoria.clearMemory();
+            clearTxtLabels();
+            clearULAStatus();
+            buffer.Clear();
+            clock = 0;
+            clockTotal = 0;
+            posicoes = 0;
+            atualizarClockStatus();
+            setarMemoriaTxtLabels();
+            //atualizarMemoria();
+        }
+        #endregion
+
         #region atualizarMemoria
         public void atualizarMemoria()
         {
@@ -249,12 +266,9 @@ namespace arquitetura_simulador
                 {
                     MessageBox.Show("Não foi possível ler o arquivo!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                if (buffer.Count != 0)
+                if (posicoes != 0)
                 {
-                    //txtMemoria0.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(0), 2));
-                    //txtMemoria1.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(1), 2));
-                    //txtMemoria2.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(2), 2));
-                    //txtMemoria3.Text = string.Format("0x{0:X}", Convert.ToInt64(Memoria.getDado(3), 2));
+                    MessageBox.Show("Memória preenchida com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
             else
@@ -308,6 +322,7 @@ namespace arquitetura_simulador
         #region abrirArquivoAction
         private void abrirArquivoMenu_Click(object sender, EventArgs e)
         {
+            clearSimulador();
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Text Files|*.txt";
             openFileDialog1.Title = "Selecione o arquivo de texto";
@@ -344,6 +359,17 @@ namespace arquitetura_simulador
             {
                 MessageBox.Show("A memória está vazia!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void sobreMenu_Click(object sender, EventArgs e)
+        {
+            frmSobre sobreGUI = new frmSobre();
+            sobreGUI.ShowDialog();
+        }
+
+        private void sairMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

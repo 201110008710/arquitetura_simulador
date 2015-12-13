@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arquitetura_simulador", "arquitetura_simulador\arquitetura_simulador.csproj", "{F771F75C-C9CF-44AF-B60B-FED5191FC8FC}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupSimuladorProcessador", "SetupSimuladorProcessador\SetupSimuladorProcessador.vdproj", "{332A31FE-8547-4A76-BBCD-58809EEED278}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{F771F75C-C9CF-44AF-B60B-FED5191FC8FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F771F75C-C9CF-44AF-B60B-FED5191FC8FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F771F75C-C9CF-44AF-B60B-FED5191FC8FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{332A31FE-8547-4A76-BBCD-58809EEED278}.Debug|Any CPU.ActiveCfg = Debug
+		{332A31FE-8547-4A76-BBCD-58809EEED278}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
