@@ -24,6 +24,7 @@ namespace arquitetura_simulador
         static private void execucao()
         {
             int inst = Convert.ToInt32(Decodificador.getInstrucao());
+            Console.Out.WriteLine("Inst: "+inst);
             long operando1 = Decodificador.getOperando1();
             long operando2 = Decodificador.getOperando2();
             switch (inst)
@@ -76,13 +77,16 @@ namespace arquitetura_simulador
                     ula = true;
                     ULA.decremento(operando1);
                     break;
-                case 12: //mov memória -> registrador
+                case 12: 
                     ula = false;
                     break;
-                case 13: //mov registrador -> memória
+                case 13: 
                     ula = false;
                     break;
                 case 14:
+                    ula = false;
+                    break;
+                case 15:
                     ula = false;
                     break;
             }

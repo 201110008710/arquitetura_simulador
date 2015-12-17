@@ -37,7 +37,7 @@ namespace arquitetura_simulador
                 flags[1] = 1;
             }
             flags[2] = 0;
-            if (soma < -132768 || soma > 132768)
+            if (soma < -16384 || soma > 16384)
             {
                 flags[3] = 1;
             }
@@ -59,7 +59,7 @@ namespace arquitetura_simulador
                 flags[1] = 1;
             }
             flags[2] = 0;
-            if (subtracao < -132768 || subtracao > 132768)
+            if (subtracao < -16384 || subtracao > 16384)
             {
                 flags[3] = 1;
             }
@@ -81,7 +81,7 @@ namespace arquitetura_simulador
                 flags[1] = 1;
             }
             flags[2] = 0;
-            if (multiplicacao < -132768 || multiplicacao > 132768)
+            if (multiplicacao < -16384 || multiplicacao > 16384)
             {
                 flags[3] = 1;
             }
@@ -110,7 +110,7 @@ namespace arquitetura_simulador
                     flags[0] = 0;
                     flags[1] = 1;
                 }
-                if (divisao < -132768 || divisao > 132768)
+                if (divisao < -16384 || divisao > 16384)
                 {
                     flags[3] = 1;
                 }
@@ -169,7 +169,7 @@ namespace arquitetura_simulador
                 flags[1] = 1;
             }
             flags[2] = 0;
-            if (incremento < -132768 || incremento > 132768)
+            if (incremento < -16384 || incremento > 16384)
             {
                 flags[3] = 1;
             }
@@ -191,7 +191,7 @@ namespace arquitetura_simulador
                 flags[1] = 1;
             }
             flags[2] = 0;
-            if (decremento < -132768 || decremento > 132768)
+            if (decremento < -16384 || decremento > 16384)
             {
                 flags[3] = 1;
             }

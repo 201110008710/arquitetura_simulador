@@ -201,7 +201,6 @@ namespace arquitetura_simulador
             posicoes = 0;
             atualizarClockStatus();
             setarMemoriaTxtLabels();
-            //atualizarMemoria();
         }
         #endregion
 
@@ -212,16 +211,12 @@ namespace arquitetura_simulador
             int i = 0;
             for (i = 0; buffer.Count > 0; i++)
             {
-                Console.Out.WriteLine("Buffer: " + buffer.Count);
-                Console.Out.WriteLine("i:" + i);
                 if (i > 3)
                 {
-                    Console.Out.WriteLine("Break:" + i);
                     break;
                 }
                 else
                 {
-                    Console.Out.WriteLine("Inserindo item: " + i);
                     Memoria.insertDado(i, buffer.Dequeue().ToString());
                 }
             }
@@ -257,6 +252,7 @@ namespace arquitetura_simulador
                             {
                                 MessageBox.Show("O arquivo deve possuir 32 caracteres por linha!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 buffer.Clear();
+                                posicoes = -1;
                             }
                             posicoes++;
                         }
@@ -309,11 +305,13 @@ namespace arquitetura_simulador
                 case 11: //Decremento
                     return "DEC";
                 case 12: //mov memória -> registrador
-                    return null;
+                    return "---";
                 case 13: //mov registrador -> memória
-                    return null;
+                    return "---";
                 case 14:
-                    return null;
+                    return "---";
+                case 15:
+                    return "---";
             }
             return null;
         }
@@ -336,7 +334,6 @@ namespace arquitetura_simulador
 
         private void btClock_Click(object sender, EventArgs e)
         {
-            Console.Out.WriteLine(posicoes);
             if (posicoes != 0)
             {
                 if (clockTotal < posicoes * 5)
